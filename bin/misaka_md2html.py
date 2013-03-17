@@ -163,7 +163,7 @@ template = Template("""
 
         <button id="hdrcontents">Contents</button>
         <button id="hdrrelated">Related</button>
-        <span class="tiny">[<a href="https://github.com/tub78/gollum-bootstrap">About Gollum Bootstrap</a>]</span>
+        <span class="tiny">[<a href="https://github.com/tub78/misaka-bootstrap">About Misaka Bootstrap</a>]</span>
         <hr>
 
         <!-- TABLE OF CONTENTS -->
