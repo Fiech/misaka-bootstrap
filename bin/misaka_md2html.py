@@ -141,8 +141,8 @@ template = Template("""
         <script language="javascript">//<![CDATA[ 
             $(document).ready(function(){
               // Hardcode day / night mode
-              $(".title,.todoaction,.ideaaction,.bugaction,.doneaction,body,h1,h2,h3,h4,h5,h6,a,a.missing-wiki-link,th,blockquote,code").addClass("day");
-              // $(".title,.todoaction,.ideaaction,.bugaction,.doneaction,body,h1,h2,h3,h4,h5,h6,a,a.missing-wiki-link,th,blockquote,code").addClass("night");
+              // $(".title,.todoaction,.ideaaction,.bugaction,.doneaction,body,h1,h2,h3,h4,h5,h6,a,a.missing-wiki-link,th,blockquote,code").addClass("day");
+              $(".title,.todoaction,.ideaaction,.bugaction,.doneaction,body,h1,h2,h3,h4,h5,h6,a,a.missing-wiki-link,th,blockquote,code").addClass("night");
               $("button#hdrcontents").click(function(){
                 $("div.hdrcontents").toggle();
               });
