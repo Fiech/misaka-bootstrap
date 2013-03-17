@@ -3,7 +3,7 @@
 
 # Misaka Bootstrap
 
-## $> `git clone git://github.com/tub78/misaka-bootstrap.git Wiki`
+## $ `git clone git://github.com/tub78/misaka-bootstrap.git Wiki`
 
 ```bash
 Cloning into 'TEST'...
@@ -15,7 +15,7 @@ Resolving deltas: 100% (6/6), done.
 ```
 
 
-## $> `cd Wiki/; ls -l`
+## $ `cd Wiki/; ls -l`
 
 ```bash
   drwxr-xr-x   136 Mar 16 19:03 Html
@@ -28,7 +28,7 @@ Resolving deltas: 100% (6/6), done.
 ```
 
 
-## $> `cat README.md`
+## $ `cat README.md`
 
 ```markdown
   %toc
@@ -40,7 +40,7 @@ Resolving deltas: 100% (6/6), done.
 ```
 
 
-## $> `ls -l Media/`
+## $ `ls -l Media/`
 
 ```bash
   total 24
@@ -49,7 +49,7 @@ Resolving deltas: 100% (6/6), done.
   -rw-r--r--  630 Mar  3 22:48 spacer400.gif
 ```
 
-## $> `ls -l Html/`
+## $ `ls -l Html/`
 
 ```bash
   total 16
@@ -58,7 +58,7 @@ Resolving deltas: 100% (6/6), done.
 ```
 
 
-## $> `ls -l bin/`
+## $ `ls -l bin/`
 
 ```bash
   total 32
