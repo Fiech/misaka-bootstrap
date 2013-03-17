@@ -6,7 +6,7 @@
 ## $ `git clone git://github.com/tub78/misaka-bootstrap.git Wiki`
 
 ```bash
-Cloning into 'TEST'...
+Cloning into 'Wiki'...
 remote: Counting objects: 24, done.
 remote: Compressing objects: 100% (14/14), done.
 remote: Total 24 (delta 6), reused 24 (delta 6)
