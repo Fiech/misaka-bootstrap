@@ -53,7 +53,7 @@ Finish implementing template handling.  Will need vimwiki settings info passed f
 
   http://code.google.com/p/vimwiki/source/detail?name=ba8552ac8864&r=9c8ccb55004d9f563e8fa3f16e6a0207965348cd
 
-To load templates for your application with Jinja2
+To load templates for your application with Jinja2 ...
 
   > To load templates for your application, the simplest way to configure Jinja2
   > looks like this:
@@ -141,8 +141,8 @@ template = Template("""
         <script language="javascript">//<![CDATA[ 
             $(document).ready(function(){
               // Hardcode day / night mode
-              // $(".title,.todoaction,.ideaaction,.bugaction,.doneaction,body,h1,h2,h3,h4,h5,h6,a,a.missing-wiki-link,th,blockquote,code").addClass("day");
-              $(".title,.todoaction,.ideaaction,.bugaction,.doneaction,body,h1,h2,h3,h4,h5,h6,a,a.missing-wiki-link,th,blockquote,code").addClass("night");
+              $(".title,.todoaction,.ideaaction,.bugaction,.doneaction,body,h1,h2,h3,h4,h5,h6,a,a.missing-wiki-link,th,blockquote,code").addClass("day");
+              // $(".title,.todoaction,.ideaaction,.bugaction,.doneaction,body,h1,h2,h3,h4,h5,h6,a,a.missing-wiki-link,th,blockquote,code").addClass("night");
               $("button#hdrcontents").click(function(){
                 $("div.hdrcontents").toggle();
               });

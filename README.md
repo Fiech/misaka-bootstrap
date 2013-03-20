@@ -1,6 +1,21 @@
 
 %toc
 
+# Credits
+
+1. The `misaka_md2html.py` converter was developed by Jason6Anderson, posted on Vimwiki [issue 384](http://code.google.com/p/vimwiki/issues/detail?id=384)
+1. Code highlighting support is provided by [Pygments][]
+1. Equation rendering support is provided by [MathJax][] 
+1. Stylesheet colors are based on [Solarized][]
+1. And all editing was done in [Vimwiki][]
+
+[Vimwiki]: http://code.google.com/p/vimwiki
+[Pygments]: http://pygments.org/
+[MathJax]: http://www.mathjax.org/
+[Solarized]: http://ethanschoonover.com/solarized
+
+
+
 # Misaka Bootstrap
 
 ## $ `git clone git://github.com/tub78/misaka-bootstrap.git Wiki`
@@ -64,5 +79,6 @@ Resolving deltas: 100% (6/6), done.
   total 32
   -rwxr-xr-x  13376 Mar 16 23:46 misaka_md2html.py
 ```
+
 
 
