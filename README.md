@@ -14,7 +14,44 @@
 [MathJax]: http://www.mathjax.org/
 [Solarized]: http://ethanschoonover.com/solarized
 
+# Requirements
 
+* python3
+* misaka
+* Jinja2
+* houdini.py
+* Pygments
+
+*Note: misaka, Jinja2, houdini.py and Pygments can be installed using `pip install <package>` or similar.*
+
+# Installation
+
+1. Clone into local dir: `git clone <repo_url> <local_dir>`
+2. TBC
+
+# Configuration
+
+In your .vimrc use a vimwiki configuration similar to:
+
+```vim
+" Configuration for Misaka Bootstrap
+let g:vimwiki_list = [{
+  \ 'syntax'           : 'markdown',
+  \ 'ext'              : '.md',
+  \ 'template_default': 'default',
+  \ 'template_ext': '.html',
+  \ 'index'            : 'README',
+  \ 'path_html'        : '<local_dir>/misaka-bootstrap/Html/',
+  \ 'nested_syntaxes'  : {'ruby': 'ruby', 'python': 'python', 'c++': 'cpp', 'sh': 'sh', 'bash': 'sh', 'r': 'R', 'R': 'R', 'vim': 'vim', 'objc': 'objc', 'xml': 'html', 'html': 'html', 'jscript': 'javascript', 'javascript': 'javascript', 'css': 'css', 'ascript': 'applescript', 'mkd': 'markdown'},
+  \ 'custom_wiki2html' : '<local_dir>/misaka-bootstrap/bin/misaka_md2html.py',
+  \ 'list_margin'      : 1,
+  \ 'force'            : 1,
+  \ 'temp'             : 0,
+  \ 'template_path': '~/vimwiki/templates', 
+  \ }]
+```
+
+*Note: As of now, template_default, template_ext and template_path have no impact on how misaka_md2html.py behaves.*
 
 # Misaka Bootstrap
 

@@ -11,9 +11,11 @@
 ## INSTALLATION (note the use of the python 3 specific pip)
 
 ```bash
-    pip-3.2 install misaka Jinja2
+    sudo (?) pip-3.2 install misaka Jinja2 houdini.py Pygments
 ```
 
+* houdini.py + install 
+ 
 This file must be executable
 
 ```bash
@@ -101,10 +103,8 @@ from pygments.formatters import HtmlFormatter
 
 # A basic default template to use until the vimwiki template settings are
 # fully integrated.
-template = Template("""
+template = Template(r"""
 
-    <!doctype html>
-    <!-- !doctype html public "-//W3C//DTD HTML 4.0 Transitional //EN"> -->
     <html>
     <head>
     <!-- START HEADER -->
@@ -118,24 +118,11 @@ template = Template("""
             <link href="{{ cssfile }}" rel="stylesheet">
         {% endif %}
 
-
-        <!-- GCHART hosted GOOGLE.COM -->
-        {% if gChartFile %}
-            <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-            <script type="text/javascript" src="{{ gChartFile }}"></script>
-        {% endif %}
-
         <!-- PYGMENTS hosted TUB78/misaka-bootstrap -->
         <link href='https://raw.github.com/tub78/misaka-bootstrap/master/pygments.css' type='text/css' rel='stylesheet'/>
 
         <!-- GOOGLEAPIS hosted JQUERY.MIN -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-
-        <!-- GITHUB hosted JQUERY.COOKIE.JS -->
-        <script type="text/javascript" src="https://raw.github.com/carhartl/jquery-cookie/master/jquery.cookie.js"></script>
-
-        <!-- MATHJAX hosted CDN.MATHJAX.ORG -->
-        <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'> MathJax.Hub.Config({ extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"], jax: ["input/TeX","output/HTML-CSS"], tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]], skipTags: ["script","noscript","style","textarea","pre"], processEnvironments: true}, TeX: { extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"] } }); </script>
 
         <!-- DAYTIME/NIGHTTIME -->
         <script language="javascript">//<![CDATA[ 
@@ -151,8 +138,16 @@ template = Template("""
               });
             });
         //]]></script>
-        
 
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
+        </script>
+
+        <!-- MATHJAX hosted CDN.MATHJAX.ORG -->
+        <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <!-- END HEADER  -->
     </head>
@@ -200,9 +195,10 @@ if __name__ == '__main__':
     parser.add_argument("cssfile", help="The css file (with absolute path) to " "be referenced in the resulting html file.")
 
     # TODO:
-    # parser.add_argument("template_path", help="The full path to the wiki's templates")
-    # parser.add_argument("template_default", help="The default template name")
-    # parser.add_argument("template_ext", help="The extension of template files")
+    parser.add_argument("template_path", help="The full path to the wiki's templates")
+    parser.add_argument("template_default", help="The default template name")
+    parser.add_argument("template_ext", help="The extension of template files")
+    parser.add_argument("root_path", help="a count of ../ for pages buried in subdirs if you have wikilink [[dir1/dir2/dir3/my page in a subdir]] then %root_path% is replaced by '../../../'")
 
     ns = parser.parse_args()
 
@@ -313,10 +309,12 @@ if __name__ == '__main__':
                 formatter = CodeHtmlFormatter()
                 return highlight(text, lexer, formatter)
 
-        renderer = VimwikiHtmlRenderer(HTML_TOC)
+        renderer = VimwikiHtmlRenderer(HTML_TOC | HTML_ESCAPE)
         to_html = Markdown(renderer, extensions= EXT_NO_INTRA_EMPHASIS | 
-            EXT_TABLES | EXT_FENCED_CODE | EXT_AUTOLINK | 
-            EXT_STRIKETHROUGH | EXT_SUPERSCRIPT) 
+            EXT_TABLES |
+            EXT_FENCED_CODE | 
+            EXT_AUTOLINK | 
+            EXT_STRIKETHROUGH ) 
         main_content = to_html.render(input_file)
         if renderer.percent_codes['no_html']:
             print(output_file_path + " not converted due to presence of "
