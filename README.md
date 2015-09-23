@@ -63,7 +63,6 @@ let g:vimwiki_list = [{
 
 The following rules apply:
 
-1. *custom_wiki2html* should point to this file.
-2. *path_html* must be set
-3. *syntax* should equal 'markdown'
-4. *css_name* should point to the css file you want to use. It has a default value of style.css so copying the provided style.css from autoload/vimwiki/ to your *path_html* should be sufficient to get started. 
+1. *path_html* must be set
+2. *syntax* should equal 'markdown'
+3. *css_name* should point to the css file you want to use. It has a default value of style.css so copying the provided style.css from autoload/vimwiki/ to your *path_html* should be sufficient to get started. 
