@@ -1,51 +1,6 @@
 #!/usr/bin/env python3
 
 """
-## REQUIREMENTS
-
- * python 3            built-in unicode support helps avoid text processing errors
- * misaka              http://misaka.61924.nl/
- * jinja2              http://jinja.pocoo.org/
-
-
-## INSTALLATION (note the use of the python 3 specific pip)
-
-```bash
-    sudo (?) pip-3.2 install misaka Jinja2 houdini.py Pygments
-```
-
-* houdini.py + install 
- 
-This file must be executable
-
-```bash
-    chmod 755 misaka_md2html.py
-```
-
-
-## INSTALLATION (method 2)
-
-```bash
-    git clone git://github.com/FSX/misaka.git
-    cd misaka
-    python setup.py install
-
-    git clone git://github.com/mitsuhiko/jinja2.git
-    cd jinja2
-    ln -s jinja2 /usr/lib/python2.X/site-packages
-    As an alternative to steps 4 you can also do python setup.py develop
-```
-
-## VIMWIKI SETTINGS (in vimrc):
-
-1. custom_wiki2html should point to this file.
-2. path_html must be set
-3. syntax should equal 'markdown'
-4. css_name should point to the css file you want to use.  This has a default value of style.css so copying the provided style.css from autoload/vimwiki/ to your path_html should be sufficient to get started. 
-
-
-
-
 ## TODO
 
 Finish implementing template handling.  Will need vimwiki settings info passed for the following
@@ -71,14 +26,12 @@ To load templates for your application with Jinja2 ...
   > resources.  To load a template from this environment you just have to call
   > the get_template() method which then returns the loaded Template" ...
 
-
-
 ## CHANGELOG
 
 ### 2013-03-16 stu: created gihub project
 ### 2013-02-03 stu: modify template
 ### 2013-03-03 stu: add houdini/pygments syntax highlighting http://misaka.61924.nl/manual/
-
+### 2015-22-09 fiech: added support for ten vimwiki passing parameters + fixed bugs with escaping
 """
 
 import os.path
