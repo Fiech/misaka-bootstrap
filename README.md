@@ -62,6 +62,7 @@ let g:vimwiki_list = [{
 *Note: As of now, template_default, template_ext and template_path have no impact on how misaka_md2html.py behaves.*
 
 The following rules apply:
+
 1. *custom_wiki2html* should point to this file.
 2. *path_html* must be set
 3. *syntax* should equal 'markdown'
